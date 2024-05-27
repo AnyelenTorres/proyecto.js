@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
@@ -12,23 +12,24 @@
     <title>EmiliaStore</title>
 </head>
 <body>
-    <h1 id="h1">Emilia <img id="imagen-corazon"src="c1.avif"></h1>
+    <h1 id="h1">Emilia <img src="src/img/c1.avif" id="imagen-corazon"></h1>
         <h2 id="h2">lugar de tus gustos...</h2>
         
 
     <header>
         
-        <img src="shoppaymentorderbuy-34_icon-icons.com_73865 (1).png">
+        <img src="src/img/shoppaymentorderbuy-34_icon-icons.com_73865 (1).png">
         <nav>
             <ul>
-                <li>Iniciar sesion</li>
-                <li>Registrarse</li>
-                <li id="show-products">Productos</li>
-				<li id="show-posts">Posts</li>
-				<li id="show-recetas">Recetas</li>
-				<li id="show-users">Users</li>
-				<li id="cerrar-sesion">Cerrar Sesión</li>
+                <li id="iniciar-sesion" class="btn-header ">Iniciar Sesion</li>
+				<li id="registrarse" class="btn-header ">Registrarse</li>
+				<li id="show-products" class="btn-header ocultar ">Productos</li>
+				<li id="show-posts" class="btn-header ocultar ">Posts</li>
+				<li id="show-recetas" class="btn-header ocultar ">Recetas</li>
+				<li id="show-users" class="btn-header ocultar ">Users</li>
+				<li id="cerrar-sesion" class="btn-header ocultar ">Cerrar Sesión</li>
             </ul>
+
         </nav>
     </header>
     <main>
@@ -74,13 +75,13 @@
                 </div>    
             <!--Boton registro-->
 
-                <button class="registro">Registrarse</button>
+                <button  id="btn-registro">Registrarse</button>
             </form>
         </section>
 
         <!-- Iniciar Sesion -->
 
-        <section>
+        <section class="inicio">
             <form id="">
                 <div>
                     <label for="">Usuario</label>
@@ -153,7 +154,7 @@
     <footer>
 		
 	</footer>
-    <script type="module" src="/main.mjs"></script>
+    <script type="module" src="script/main.mjs"></script>
 </body>
 
 </html>

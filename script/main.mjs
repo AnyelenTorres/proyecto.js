@@ -1,10 +1,16 @@
+import { addUser } from "./users/addUser.mjs";
 
 
 //------ Constantes------
 const $ = selector => document.querySelector(selector);
 
 
-const btnRegistrarse = $(".registro");
+const $btnRegistrarse = $("#registrarse");
+const $btnFormRegistro = $(".registro");
+const $Registrar = $("#btn-registro");
+const $btnFormInicio = $(".inicio");
+const $btnIniciar = $('#iniciar-sesion');
+
 
 // ------stateLogin - inicializacion de estado de inicio de sesion------
 
@@ -25,11 +31,24 @@ if(!localStorage.getItem('stateLogin')){
 }
 
 
-//-----boton registro-----
+//-----boton nav seccion registro-----
 
-btnRegistrarse.addEventListener("click",()=>{
+$btnRegistrarse.addEventListener('click', () =>{
+    
+    $btnFormRegistro.classList.remove('ocultar')
+    $btnFormInicio.classList.add('ocultar')
+    
+})
 
-} )
+// -----boton nav seccion inicio------
+
+$btnIniciar.addEventListener('click', () =>{
+
+    $btnFormRegistro.classList.add('ocultar')
+    $btnFormInicio.classList.remove('ocultar')
+
+})
+
 
 //-----guardamos los usuarios que se ha registrado-----
 
