@@ -12,5 +12,11 @@
     if(!usuario){
      return   alert("El usuario no existe")
     }
-    if(usuario.pass)
- }
+    if(usuario.password === currentPassword){
+      handleLogInState(firstName,lastName,username,email,image,true)
+      return true
+
+      }
+      return false
+    }
+ 
