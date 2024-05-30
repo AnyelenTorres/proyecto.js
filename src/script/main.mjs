@@ -1,10 +1,8 @@
-import { addUser } from "../src/script/users/addUser.mjs";
-import { logInUser } from "../src/script/users/logIn.mjs";
-import { getAllUsers } from "../src/script/users/getUsers.mjs";
-//import { getAllProducts }
-//import { getAllPost } 
- 
-
+import { getAllUsers } from "./users/getUsers.mjs";
+import { addUser } from "./users/addUser.mjs";
+import { getAllPost } from "./posts/getAllPost.mjs";
+import { logInUser } from "./users/logIn.mjs";
+import { getAllProducts } from "./products/getAllProducts.mjs";
 
 
 //------ CONSTANTES------

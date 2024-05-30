@@ -37,20 +37,20 @@
 
         <!--registro-->
         <section class="registro ocultar">
-            <form id="">
+            <form id="form-registro">
                 <div class=" r-l">
                     <div>
                         <label>Nombre</label>
-                        <input id="nombre"type="text">
+                        <input class="formulario" id="nombre"type="text"><br>
 
                         <label>Apellido</label>
-                        <input id="apellido" type="text">
+                        <input class="formulario"  id="apellido" type="text"><br>
 
                         <label>Edad</label>
-                        <input type="text">
+                        <input class="formulario"  type="text"><br>
 
-                        <label>País</label>
-                        <select name="" id="">
+                        <label class="formulario" >País</label>
+                        <select name="" id=""><br>
                             <option value="Argentina">Argentina</option>
                             <option value="Argentina">Chile</option>
                             <option value="Argentina">Perú</option>
@@ -59,18 +59,18 @@
                         </select>
                     </div>
             <!--Usuario-->        
-                    <div>
+                    <div id="form-registro-usuario">
                         <label>Usuario</label>
-                        <input id="usuario" type="text">
+                        <input class="formulario" id="usuario" type="text"><br>
 
                         <label>Contraseña</label>
-                        <input id="password" type="text">
+                        <input class="formulario" id="password" type="text"><br>
 
                         <label>Repetir contraseña</label>
-                        <input type="text">
+                        <input class="formulario" type="text"><br>
 
                         <label>Email</label>
-                        <input type="text">
+                        <input class="formulario" type="text"><br>
 
                     </div>
                 </div>    
@@ -85,11 +85,11 @@
         <section class="inicio">
             <form id="">
                 <div>
-                    <label for="">Usuario</label>
-                    <input id="login-user" type="text">
+                    <label for="login-user">Usuario</label>
+                    <input class="formulario" id="login-user" type="text">
 
-                    <label for="">Contraseña</label>
-                    <input id="login-password" type="text">
+                    <label for="login-password">Contraseña</label>
+                    <input class="formulario"  id="login-password" type="text">
 
                     <button id="btn-login">Ingresar</button>
                 </div>
@@ -122,7 +122,7 @@
 
 					<div class="card-img"><div class="img"></div></div>
 					<div class="card-title">Product title</div>
-					<div class="card-subtitle">Product description. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+					<div class="card-subtitle">Descripcion del producto</div>
 					<hr class="card-divider">
 					<div class="card-footer">
 						<div class="card-price"><span>$</span> 123.45</div>
@@ -139,23 +139,22 @@
                     <div class="card">
        
                         <div class="body">
-                          <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa ipsum, laoreet quis mollis nec, feugiat in dui. Suspendisse et enim pretium, ullamcorper enim laoreet.</p><span class="username">from: @Yaya12085</span>
+                          <p class="text">Comentarios</p><span class="username">from: @anyi123</span>
                            <div class="footer">
                             
                            </div>
                         </div>
                     </div>
-
+                </section>
             </div>
-
-
-
         </section>
-    </section>
+     
     </main>
     <footer>
 		
 	</footer>
-    <script type="module" src=".\main.mjs"></script>
+
+  <script type="module" src="src/script/main.mjs"></script>
+  
 </body>
 </html>
