@@ -1,8 +1,13 @@
 import { addUser } from "./users/addUser.mjs";
 import { logInUser } from "./users/logIn.mjs";
-import { getAllUsers } from ".users/getUsers.mjs"
+import { getAllUsers } from "./users/getUsers.mjs";
+//import { getAllProducts }
+//import { getAllPost } 
+ 
 
-//------ Constantes------
+
+
+//------ CONSTANTES------
 const $ = selector => document.querySelector(selector);
 
 
@@ -21,9 +26,19 @@ const $apellido =$("#apellido");
 const $usuario =$("#usuario");
 const $password =$("#password");
 const $btnPost = $("#show-posts");
-const $btnLogIn = $("")
+const $btnLogIn = $("btn-login")
+const $logInUser = $("login-user");
+const $logInPassword = $("login-password");
 
-// ------stateLogin - inicializacion de estado de inicio de sesion------
+
+
+// cargar pagina y luego llama a getAllUser
+window.onload = () => {
+    getAllUsers();
+
+}
+
+// ------stateLogin - inicializacion de estado de INICIO DE SESION------
 
 if(!localStorage.getItem('stateLogin')){
     localStorage.setItem('stateLogin', JSON.stringify({
@@ -85,6 +100,8 @@ $btnIniciar.addEventListener('click', () =>{
 
 })
 
+
+
 //-----------REGISTRAMOS UN USUARIO----------
 
 $Registrar.addEventListener("click", (e)=>{
@@ -103,21 +120,72 @@ $Registrar.addEventListener("click", (e)=>{
 })
 
 
-// ----- MOSTRAR TODOS LOS POST del dummyjson
+//----------- MOSTRAR TODOS LOS POST del dummyjson-------------------------
 
 $btnPost.addEventListener("click",()=>{
     getAllPost();
 }
 )
 
+//-----------MOSTRAR LOS PRODUCTOS-----------------------------------------
 
-//----FORM LOGIN-------------
+$btnProducto.addEventListener("click", () =>{
+    getAllProducts();
+}
+)
+//-----------------FORM LOGIN-----------------------------------------------
 
 
-$btnLogIn.addEventListener
+$btnLogIn.addEventListener("click", (e)=>{
+  //  e.preventDefault();
+
+  let resLogIn = logInUser($logInUser.value, $logInPassword.value)
+
+    if (resLogIn){
+        $btnFormInicio.classList.add("ocultar");
+        $home.classList.remove("ocultar");
+        $btnProducto.remove("ocultar");
+        $btnUser.classList.remove("ocultar");
+        $btnCerrarSesion.classList.remove("ocultar");
+        $btnRegistrarse.classList.add("ocultar");
+        $btnIniciar.classList.add("ocultar");
+        $sectionHome.classList.remove("ocultar");
 
 
-//-----guardamos los usuarios que se ha registrado-----
+        $sectionHome.innerHTML = `
+        <img src=${logInState.user.image} alt="">
+		<h1>Bienvenido <span id="home-name-user">${logInState.user.firstName}</span></h1>
+        `
+
+
+        $logInPassword.value="";
+        $logInUser.value="";
+    
+    }else{
+        alert("la contraseña o usuario es incorrecto/a.")
+    }
+
+
+})
+
+//-----------CERRAR SESION----------------
+
+$btnCerrarSesion.addEventListener("click", ()=>{
+    $btnFormInicio.classList.remove("ocultar");
+    $home.classList.add("ocultar");
+    $btnProducto.classList.add("ocultar");
+    $btnUser.classList.add("ocultar");
+    $btnCerrarSesion.classList.add("ocultar");
+    $btnRegistrarse.classList.remove("ocultar");
+    $btnIniciar.classList.remove("ocultar");
+    $sectionHome.classList.add("ocultar");
+    handleLogInState();
+
+    console.log(logInState)
+    
+})
+
+//-----GUARDAMOS LOS USUARIOS REGISTRADOS -----
 
 export const handleLogInState = (firstName = "", lastName = "", username = "", email = "", image = "", state = false) => {
     logInState.state = state

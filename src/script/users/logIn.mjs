@@ -1,7 +1,7 @@
  import { handleLogInState } from "script/users/main.mjs"
 
 
- const logInUser = (currentUser, currentPassword) => {
+ export const logInUser = (currentUser, currentPassword) => {
 
     const users = JSON.parse(localStorage.setItem("BDTT"));
 
