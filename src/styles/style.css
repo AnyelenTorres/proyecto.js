@@ -60,8 +60,8 @@ header nav ul{
 
 
 .card {
-    width: 190px;
-    height: 254px;
+    width: 13rem;
+    height: 17rem;
     padding: 5px;
    
 }
@@ -89,8 +89,8 @@ header nav ul{
 
 #posts{
     background:#909090;
-    width: 190px;
-    height: 254px;
+    width: 13rem;
+    height: 17rem;
     padding: 0.2rem;
     margin: 0.5rem;
 

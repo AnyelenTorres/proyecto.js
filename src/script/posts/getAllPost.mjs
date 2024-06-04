@@ -27,7 +27,7 @@ export const getAllPost = async () =>{
          </div>
       </div></div>
         `
-    })
+    });
 
-}
+};
     

@@ -1,4 +1,4 @@
- import { handleLogInState } from "script/users/main.mjs"
+ import { handleLogInState } from "script/users/main.mjs";
 
 
  export const logInUser = (currentUser, currentPassword) => {
@@ -13,10 +13,10 @@
      return   alert("El usuario no existe")
     }
     if(usuario.password === currentPassword){
-      handleLogInState(firstName,lastName,username,email,image,true)
-      return true
+      handleLogInState(firstName,lastName,username,email,image,true);
+      return true;
 
       }
-      return false
-    }
+      return false;
+    };
  

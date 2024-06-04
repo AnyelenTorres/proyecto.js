@@ -10,14 +10,14 @@ const addToCart = async(id) =>{
         localStorage.setItem('stateLogin',JSON.stringify(usuarioLoged));
 
     } catch (error) {
-        alert("ups, hubo un error")
+        alert("ups, hubo un error");
     }
 }
 
 export const getAllProducts = async()=>{
 
     try {
-        const res = await fetch('https://dummyjson.com/products')
+        const res = await fetch('https://dummyjson.com/products');
         const { products } = await res.json();
 
         products.forEach(product => {
@@ -75,12 +75,12 @@ export const getAllProducts = async()=>{
            addToCart(btn.dataset.id)
             }
         )
-        })
+        });
 
     } catch (error) {
-        console.log("error al obtener productos")
+        console.log("error al obtener productos");
     }
-}
+};
 
 
 

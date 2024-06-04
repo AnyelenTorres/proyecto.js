@@ -11,14 +11,14 @@ export const addUser = async (firstName, lastName, username, password, image = "
           password,
           image
         })
-      })
+      });
 
-    const users = JSON.parse(localStorage.getItem('DBTT'))
+    const users = JSON.parse(localStorage.getItem('DBTT'));
 
     // el resultado se almacena en la variable user
     const user = await postUser.json();
-    users.push(user)
-    localStorage.setItem('DBTT', JSON.stringify(users))
+    users.push(user);
+    localStorage.setItem('DBTT', JSON.stringify(users));
 
 }catch (error) {
   console.error('Error al agregar el usuario:', error);
