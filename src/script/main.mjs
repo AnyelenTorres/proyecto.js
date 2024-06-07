@@ -32,8 +32,8 @@ const $usuario =$("#usuario");
 const $password =$("#password");
 const $btnPost = $("#show-posts");
 const $btnLogIn = $("#btn-login")
-const $logInUser = $("login-user");
-const $logInPassword = $("login-password");
+const $logInUser = $("#login-user");
+const $logInPassword = $("#login-password");
 
 
 
@@ -56,7 +56,7 @@ if(!localStorage.getItem('stateLogin')){
     }));
 }else{
     console.log("Ya está creado el stateLogin");
-}
+};
 
 
 export let logInState = JSON.parse(localStorage.getItem('stateLogin'));
@@ -84,12 +84,12 @@ if(logInState.state){
 
 //-----boton nav seccion registro-----
 
-$btnRegistrarse.addEventListener('click', () =>{
+$btnRegistrarse.addEventListener("click", () => {
     
     $btnFormRegistro.classList.remove("ocultar");
     $btnFormInicio.classList.add("ocultar");
     
-})
+});
 
 
 // -----boton nav seccion inicio------
@@ -99,7 +99,7 @@ $btnIniciar.addEventListener('click', () =>{
     $btnFormRegistro.classList.add('ocultar');
     $btnFormInicio.classList.remove('ocultar');
 
-})
+});
 
 
 
