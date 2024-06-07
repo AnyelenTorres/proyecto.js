@@ -7,8 +7,11 @@ import { getAllProducts } from "./products/getAllProducts.mjs";
 // cargar pagina y luego llama a getAllUser
 window.onload = () => {
     getAllUsers();
+   
 
 }
+
+
 //------ CONSTANTES------
 const $ = selector => document.querySelector(selector);
 
@@ -28,7 +31,7 @@ const $apellido =$("#apellido");
 const $usuario =$("#usuario");
 const $password =$("#password");
 const $btnPost = $("#show-posts");
-const $btnLogIn = $("btn-login")
+const $btnLogIn = $("#btn-login")
 const $logInUser = $("login-user");
 const $logInPassword = $("login-password");
 
@@ -83,10 +86,11 @@ if(logInState.state){
 
 $btnRegistrarse.addEventListener('click', () =>{
     
-    $btnFormRegistro.classList.remove('ocultar');
-    $btnFormInicio.classList.add('ocultar');
+    $btnFormRegistro.classList.remove("ocultar");
+    $btnFormInicio.classList.add("ocultar");
     
 })
+
 
 // -----boton nav seccion inicio------
 
@@ -117,9 +121,9 @@ $Registrar.addEventListener('click', (e) => {
 
 //----------- MOSTRAR TODOS LOS POST del dummyjson-------------------------
 
-$btnPosts.addEventListener('click', () => {
+$btnPost.addEventListener('click', () => {
     getAllPost();
-})
+});
 
 
 //-----------------FORM LOGIN-----------------------------------------------
@@ -131,7 +135,7 @@ $btnLogIn.addEventListener('click', (e) => {
     if(resLogIn){
         $btnFormInicio.classList.add('ocultar');
         $home.classList.remove('ocultar');
-        $btnReceta.classList.remove('ocultar');
+       // $btnReceta.classList.remove('ocultar');
         $btnProducto.classList.remove('ocultar');
         $btnUser.classList.remove('ocultar');
         $btnCerrarSesion.classList.remove('ocultar');
@@ -160,7 +164,7 @@ $btnLogIn.addEventListener('click', (e) => {
 $btnCerrarSesion.addEventListener('click', () => {
     $btnFormInicio.classList.remove('ocultar');
         $home.classList.add('ocultar');
-        $btnReceta.classList.add('ocultar');
+        //$btnReceta.classList.add('ocultar');
         $btnProducto.classList.add('ocultar');
         $btnUser.classList.add('ocultar');
         $btnCerrarSesion.classList.add('ocultar');
