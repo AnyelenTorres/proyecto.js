@@ -1,4 +1,4 @@
- import { handleLogInState } from "script/users/main.mjs";
+ import { handleLogInState } from "./script/users/main.mjs";
 
 
  export const logInUser = (currentUser, currentPassword) => {
