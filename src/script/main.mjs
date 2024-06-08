@@ -34,6 +34,8 @@ const $btnPost = $("#show-posts");
 const $btnLogIn = $("#btn-login")
 const $logInUser = $("#login-user");
 const $logInPassword = $("#login-password");
+const $email = $("#email");
+const $edad =$("#edad");
 
 
 
@@ -105,18 +107,64 @@ $btnIniciar.addEventListener('click', () =>{
 
 //-----------REGISTRAMOS UN USUARIO----------
 
-$Registrar.addEventListener('click', (e) => {
-    if($nombre.value !== "" && $apellido.value !== "" && $usuario.value !== "" && $password.value !== ""){
-        addUser($nombre.value, $apellido.value, $usuario.value, $password.value);
-        alert('El registro fue exitoso');
-        $nombre.value = "";
-        $apellido.value = "";
-        $usuario.value = "";
-        $password.value = "";
-        $btnFormRegistro.classList.add('ocultar');
-        $btnFormInicio.classList.remove('ocultar');
-    };
+// REGEX ----------VALIDACIONES-----------------------------------------------------------
+const regex = {
+    nombre : /^[a-zA-ZÀ-ÿ\s]{4,20}$/,
+    apellido : /^[a-zA-ZÀ-ÿ\s]{4,20}$/,
+    edad : /^[0-9]{2}$/,
+    usuario: /^[a-zA-ZÀ-ÿ\s]{3,20}$/,
+    email : /^[a-zA-Z0-9\.\-_]+@[a-zA-Z]+\.(com|net|gov.ar)$/,
+    password : /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{8,24}$/
+}
+
+const valueRegex = {
+    nombre:false,
+    apellido: false,
+    edad: false,
+    usuario: false,
+    email:false,
+    password:false
+}
+
+ $Registrar.addEventListener('submit', (e)=> {
+            e.preventDefault()
+            if(valueRegex.nombre && valueRegex.apellido && valueRegex.edad && valueRegex.email && valueRegex.password && valueRegex.usuario ){
+            
+                const dbUsers = JSON.parse(localStorage.getItem('BDTT'))
+                const user = {
+                    nombre : $('#nombre').value,
+                    apellido: $('#apellido').value,
+                    email:$('#email').value,
+                    edad: $('#edad').value,
+                    password: $('#password').value,
+                    usuario: $('#usuario').value
+                }
+                dbUsers.push(user)
+                localStorage.setItem('BDTT', JSON.stringify(dbUsers));
+
+            
+                alert('El registro fue exitoso');
+                $nombre.value = "";
+                $apellido.value = "";
+                $usuario.value = "";
+                $password.value = "";
+                $btnFormRegistro.classList.add('ocultar');
+                $btnFormInicio.classList.remove('ocultar');
+            }
 });
+
+
+
+
+function validacion(name, value) {
+    if (regex[name].test(value)) {
+        valueRegex[name] = true;
+    } else {
+        valueRegex[name] = false;
+    }
+};
+validacion();
+
 
 
 //----------- MOSTRAR TODOS LOS POST del dummyjson-------------------------
