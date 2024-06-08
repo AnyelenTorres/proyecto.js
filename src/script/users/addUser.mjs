@@ -1,6 +1,8 @@
 
 export const addUser = async (firstName, lastName, username, password, image = " ") => {
     //respuesta de la peticion en postUser
+
+
   try{  const postUser =await fetch('https://dummyjson.com/user/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

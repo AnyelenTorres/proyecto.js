@@ -1,6 +1,7 @@
 const addToCart = async(id) =>{
     try {
         const res = await fetch(`https://dummyjson.com/product/${id}`);
+        
             ///  const data = await JSON.parse(res);
         const data = await res.json();//lo hacemos json para uqe no genere error cuando sea buscado en el local storage
 

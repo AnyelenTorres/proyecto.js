@@ -4,6 +4,9 @@ import { getAllPost } from "./posts/getAllPost.mjs";
 import { logInUser } from "./users/logIn.mjs";
 import { getAllProducts } from "./products/getAllProducts.mjs";
 
+
+
+
 // cargar pagina y luego llama a getAllUser
 window.onload = () => {
     getAllUsers();
@@ -107,63 +110,28 @@ $btnIniciar.addEventListener('click', () =>{
 
 //-----------REGISTRAMOS UN USUARIO----------
 
-// REGEX ----------VALIDACIONES-----------------------------------------------------------
-const regex = {
-    nombre : /^[a-zA-ZÀ-ÿ\s]{4,20}$/,
-    apellido : /^[a-zA-ZÀ-ÿ\s]{4,20}$/,
-    edad : /^[0-9]{2}$/,
-    usuario: /^[a-zA-ZÀ-ÿ\s]{3,20}$/,
-    email : /^[a-zA-Z0-9\.\-_]+@[a-zA-Z]+\.(com|net|gov.ar)$/,
-    password : /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{8,24}$/
-}
-
-const valueRegex = {
-    nombre:false,
-    apellido: false,
-    edad: false,
-    usuario: false,
-    email:false,
-    password:false
-}
 
  $Registrar.addEventListener('submit', (e)=> {
             e.preventDefault()
-            if(valueRegex.nombre && valueRegex.apellido && valueRegex.edad && valueRegex.email && valueRegex.password && valueRegex.usuario ){
-            
-                const dbUsers = JSON.parse(localStorage.getItem('BDTT'))
-                const user = {
-                    nombre : $('#nombre').value,
-                    apellido: $('#apellido').value,
-                    email:$('#email').value,
-                    edad: $('#edad').value,
-                    password: $('#password').value,
-                    usuario: $('#usuario').value
-                }
-                dbUsers.push(user)
-                localStorage.setItem('BDTT', JSON.stringify(dbUsers));
+            if($nombre.value !== "" && /^[a-zA-ZÀ-ÿ\s]{4,20}$/.test($nombre.value) && 
+                $apellido.value !== "" && /^[a-zA-ZÀ-ÿ\s]{4,20}$/.test($apellido.value) &&
+                $email.value !== "" && /^[a-zA-Z0-9\.\-_]+@[a-zA-Z]+\.(com|net|gov.ar)$/.test$email.value ==  && 
+                $usuario.value !== "" && $usuario.value == /^[a-zA-ZÀ-ÿ\s]{4,20}$/ && 
+                $edad.value !== "" && $edad.value == /^[0-9]{2}$/ &&  
+                $password.value !== "" && $password.value == /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{8,24}$/ ){
 
-            
-                alert('El registro fue exitoso');
+                addUser($nombre.value, $apellido.value, $usuario.value,$email.value,$edad.value, $password.value);
+                console.log('El registro fue exitoso');
                 $nombre.value = "";
                 $apellido.value = "";
                 $usuario.value = "";
                 $password.value = "";
+                $email.value = "";
+                $edad.value ="";
                 $btnFormRegistro.classList.add('ocultar');
                 $btnFormInicio.classList.remove('ocultar');
             }
 });
-
-
-
-
-function validacion(name, value) {
-    if (regex[name].test(value)) {
-        valueRegex[name] = true;
-    } else {
-        valueRegex[name] = false;
-    }
-};
-validacion();
 
 
 
