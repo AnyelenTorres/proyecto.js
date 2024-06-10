@@ -12,72 +12,73 @@
     <title>EmiliaStore</title>
 </head>
 <body>
-    <h1 id="h1">Emilia <img src="src/img/c1.avif" id="imagen-corazon"></h1>
+    <h1 id="h1">Emilia <img src="src/img/c1.avif" alt="imagen corazon" id="imagen-corazon"></h1>
         <h2 id="h2">lugar de tus gustos...</h2>
         
 
     <header>
         
-        <img src="src/img/shoppaymentorderbuy-34_icon-icons.com_73865 (1).png">
+        <img src="src/img/shoppaymentorderbuy-34_icon-icons.com_73865 (1).png" alt="imagen de tienda">
         <nav>
             <ul>
-                <li id="iniciar-sesion" class="btn-header ">Iniciar Sesion</li>
-				<li id="registrarse" class="btn-header ">Registrarse</li>
-				<li id="show-products" class="btn-header ocultar ">Productos</li>
-				<li id="show-posts" class="btn-header ocultar ">Posts</li>
-				<li id="show-recetas" class="btn-header ocultar ">Recetas</li>
-				<li id="show-users" class="btn-header ocultar ">Users</li>
-				<li id="cerrar-sesion" class="btn-header ocultar ">Cerrar Sesión</li>
+                <li id="iniciar-sesion" class="btn-header">Iniciar Sesion</li>
+				<li id="registrarse" class="btn-header">Registrarse</li></a>
+				<li id="show-products" class="btn-header ocultar">Productos</li>
+				<li id="show-posts" class="btn-header ocultar">Posts</li>
+				<li id="show-recetas" class="btn-header ocultar">Recetas</li>
+				<li id="show-users" class="btn-header ocultar">Users</li>
+				<li id="cerrar-sesion" class="btn-header ocultar">Cerrar Sesión</li>
             </ul>
 
         </nav>
     </header>
     <main>
 
-        <!--registro-->
-        <section class="registro ocultar">
-            <form id="form-registro">
-                <div class=" r-l">
-                    <div>
-                        <label>Nombre</label>
-                        <input class="formulario" id="nombre"type="text"><br>
+         <!--registro-->
+     <section class="registro ocultar">
+        <form id="form-registro">
+            <div class=" r-l">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input class="formulario" id="nombre"type="text"><br>
 
-                        <label>Apellido</label>
-                        <input class="formulario"  id="apellido" type="text"><br>
+                    <label for="apellido">Apellido</label>
+                    <input class="formulario"  id="apellido" type="text"><br>
 
-                        <label>Edad</label>
-                        <input class="formulario" id="edad" type="text"><br>
+                    <label for="edad">Edad</label>
+                    <input class="formulario" id="edad" type="text"><br>
 
-                        <label class="formulario" >País</label>
-                        <select name="" id=""><br>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Argentina">Chile</option>
-                            <option value="Argentina">Perú</option>
-                            <option value="Argentina">Uruguay</option>
-                            <option value="Argentina">Paraguay</option>
-                        </select>
-                    </div>
-            <!--Usuario-->        
-                    <div id="form-registro-usuario">
-                        <label>Usuario</label>
-                        <input class="formulario" id="usuario" type="text"><br>
+                    <label for="pais"  class="formulario" >País</label>
+                    <select name="" id=""><br>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Peru">Perú</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Paraguay">Paraguay</option>
+                    </select>
+                </div>
+        <!--Usuario-->        
+                <div id="form-registro-usuario">
+                    <label for="usuario">Usuario</label>
+                    <input class="formulario" id="usuario" type="text"><br>
 
-                        <label>Contraseña</label>
-                        <input class="formulario" id="password" type="text"><br>
+                    <label for="contraseña">Contraseña</label>
+                    <input class="formulario" id="password" type="text"><br>
 
-                        <label>Repetir contraseña</label>
-                        <input class="formulario" type="text"><br>
+                    <label for="repetir-contraseña">Repetir contraseña</label>
+                    <input class="formulario" type="text"><br>
 
-                        <label>Email</label>
-                        <input class="formulario" id="email" type="text"><br>
-                    </div>
-                </div> 
+                    <label for="email">Email</label>
+                    <input class="formulario" id="email" type="text"><br>
+                </div>
+            </div> 
 
-            <!--Boton registro-->
-            <button id="btn-registro">Registrarse</button>
+        <!--Boton registro-->
+        <button id="btn-registro">Registrarse</button>
 
-            </form>
-        </section>
+        </form>
+    </section>
+
 
         <!-- Iniciar Sesion -->
 
@@ -88,7 +89,7 @@
                     <input class="formulario" id="login-user" type="text">
 
                     <label for="login-password">Contraseña</label>
-                    <input class="formulario"  id="login-password" type="text">
+                    <input class="formulario"  id="login-password" type="text" placeholder="debe contener al menos 8 caracteres, una mayúscula y un carácter especial">
 
                     <button id="btn-login">Ingresar</button>
                 </div>
@@ -128,12 +129,12 @@
 					<hr class="card-divider">
 					<div class="card-footer">
 						<div class="card-price"><span>$</span> 123.45</div>
-						<button class="card-btn">
+						<button class="card-btn" title="click">
 						  <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path><path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path><path d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path><path d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z"></path></svg>
 						</button>
 					</div>
 				<!-- ---- -->
-
+                
                 <!--Post-->
 
                 <section id="posts" class="card-container">

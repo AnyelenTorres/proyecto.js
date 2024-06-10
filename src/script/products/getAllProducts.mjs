@@ -13,7 +13,7 @@ const addToCart = async(id) =>{
     } catch (error) {
         alert("ups, hubo un error");
     }
-}
+};
 
 export const getAllProducts = async()=>{
 
@@ -69,20 +69,19 @@ export const getAllProducts = async()=>{
             `
         });
 
-        const buttons = document.querySelectorAll("btn-product-id");
+        const buttons = document.querySelectorAll("#btn-product-id");
+        
+        buttons.forEach( btn => {
+            btn.addEventListener('click', () => {
+                addToCart(btn.dataset.id)
+            })
+        })
 
-        buttons.forEach(btn =>{
-            btn.addEventListener("click", ()=> {
-           addToCart(btn.dataset.id)
-            }
-        )
-        });
+    }catch(e){
 
-    } catch (error) {
-        console.log("error al obtener productos");
     }
-};
 
+}
 
 
 

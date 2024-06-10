@@ -11,7 +11,6 @@ import { getAllProducts } from "./products/getAllProducts.mjs";
 window.onload = () => {
     getAllUsers();
    
-
 }
 
 
@@ -42,9 +41,6 @@ const $edad =$("#edad");
 
 
 
-
-
-
 // ------stateLogin - inicializacion de estado de INICIO DE SESION------
 
 if(!localStorage.getItem('stateLogin')){
@@ -55,33 +51,34 @@ if(!localStorage.getItem('stateLogin')){
                 lastName :"",
                 username:"",
                 email:"",
+                edad:"",
                 image:"",
                 cart:[]
             }
-    }));
+    }))
 }else{
-    console.log("Ya está creado el stateLogin");
+    console.log("Ya está creado el stateLogin")
 };
 
 
-export let logInState = JSON.parse(localStorage.getItem('stateLogin'));
+export let logInState = JSON.parse(localStorage.getItem('stateLogin'))
 
 if(logInState.state){
-    $btnFormInicio.classList.add('ocultar');
-        $home.classList.remove('ocultar');
-        $btnProducto.classList.remove('ocultar');
-        $btnUser.classList.remove('ocultar');
-        $btnCerrarSesion.classList.remove('ocultar');
-        $btnRegistrarse.classList.add('ocultar');
-        $btnIniciar.classList.add('ocultar');
-        $sectionHome.classList.remove('ocultar');
+     $btnFormInicio.classList.add('ocultar')
+        $home.classList.remove('ocultar')
+       // $btnReceta.classList.remove('ocultar')
+        $btnProducto.classList.remove('ocultar')
+        $btnUser.classList.remove('ocultar')
+        $btnCerrarSesion.classList.remove('ocultar')
+        $btnRegistrarse.classList.add('ocultar')
+        $btnIniciar.classList.add('ocultar')
+        $sectionHome.classList.remove('ocultar')
 
         $sectionHome.innerHTML = `
         <img src=${logInState.user.image} alt="">
 		<h1>Bienvenido <span id="home-name-user">${logInState.user.firstName}</span></h1>
         `
 }
-
 
 //-----------EVENTOS--------------
 
@@ -107,31 +104,30 @@ $btnIniciar.addEventListener('click', () =>{
 });
 
 
-
 //-----------REGISTRAMOS UN USUARIO----------
 
 
- $Registrar.addEventListener('submit', (e)=> {
-            e.preventDefault()
-            if($nombre.value !== "" && /^[a-zA-ZÀ-ÿ\s]{4,20}$/.test($nombre.value) && 
-                $apellido.value !== "" && /^[a-zA-ZÀ-ÿ\s]{4,20}$/.test($apellido.value) &&
-                $email.value !== "" && /^[a-zA-Z0-9\.\-_]+@[a-zA-Z]+\.(com|net|gov.ar)$/.test$email.value ==  && 
-                $usuario.value !== "" && $usuario.value == /^[a-zA-ZÀ-ÿ\s]{4,20}$/ && 
-                $edad.value !== "" && $edad.value == /^[0-9]{2}$/ &&  
-                $password.value !== "" && $password.value == /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{8,24}$/ ){
+$Registrar.addEventListener("submit", (e)=> {
+    e.preventDefault();
+    if($nombre.value !== ""  && ///^[a-zA-ZÀ-ÿ\s]{4,20}$/.test($nombre.value) && 
+        $apellido.value !== "" &&// /^[a-zA-ZÀ-ÿ\s]{4,20}$/.test($apellido.value) &&
+        $email.value !== "" &&// /^[a-zA-Z0-9\.\-_]+@[a-zA-Z]+\.(com|net|gov.ar)$/.test($email.value) && 
+        $usuario.value !== "" &&// /^[a-zA-ZÀ-ÿ\s]{4,20}$/.test($usuario.value) && 
+        $edad.value !== "" &&// /^[0-9]{2}$/.test($edad.value) &&  
+        $password.value !== ""){ //&& /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{8,24}$/.test($password.value) ){
+           
+            addUser($nombre.value, $apellido.value,$usuario.value,$email.value,$edad.value,  $password.value);
+            alert('El registro fue exitoso');
+            $nombre.value = ""
+            $apellido.value = ""
+            $usuario.value = ""
+            $password.value = ""
+            $btnFormRegistro.classList.add('ocultar')
+            $btnFormInicio.classList.remove('ocultar')
+        }})
+    
+    
 
-                addUser($nombre.value, $apellido.value, $usuario.value,$email.value,$edad.value, $password.value);
-                console.log('El registro fue exitoso');
-                $nombre.value = "";
-                $apellido.value = "";
-                $usuario.value = "";
-                $password.value = "";
-                $email.value = "";
-                $edad.value ="";
-                $btnFormRegistro.classList.add('ocultar');
-                $btnFormInicio.classList.remove('ocultar');
-            }
-});
 
 
 
@@ -143,8 +139,6 @@ $btnPost.addEventListener('click', () => {
 
 
 //-----------------FORM LOGIN-----------------------------------------------
-
-
 $btnLogIn.addEventListener('click', (e) => {
     e.preventDefault();
     let resLogIn = logInUser($logInUser.value, $logInPassword.value)
