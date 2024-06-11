@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,20 +21,20 @@
         <img src="src/img/shoppaymentorderbuy-34_icon-icons.com_73865 (1).png" alt="imagen de tienda">
         <nav>
             <ul>
-                <li id="iniciar-sesion" class="btn-header">Iniciar Sesion</li>
-				<li id="registrarse" class="btn-header">Registrarse</li></a>
-				<li id="show-products" class="btn-header ocultar">Productos</li>
-				<li id="show-posts" class="btn-header ocultar">Posts</li>
-				<li id="show-recetas" class="btn-header ocultar">Recetas</li>
-				<li id="show-users" class="btn-header ocultar">Users</li>
-				<li id="cerrar-sesion" class="btn-header ocultar">Cerrar Sesión</li>
+                <li id="iniciar-sesion" class="btn-header hover">Iniciar Sesion</li>
+				<li id="registrarse" class="btn-header hover">Registrarse</li></a>
+				<li id="show-products" class="btn-header ocultar hover">Productos</li>
+				<li id="show-posts" class="btn-header ocultar hover">Posts</li>
+				<li id="show-recetas" class="btn-header ocultar hover">Recetas</li>
+				<li id="show-users" class="btn-header ocultar hover">Users</li>
+				<li id="cerrar-sesion" class="btn-header ocultar hover">Cerrar Sesión</li>
             </ul>
 
         </nav>
     </header>
     <main>
 
-         <!--registro-->
+          <!--registro-->
      <section class="registro ocultar">
         <form id="form-registro">
             <div class=" r-l">
@@ -57,7 +57,7 @@
                         <option value="Paraguay">Paraguay</option>
                     </select>
                 </div>
-        <!--Usuario-->        
+         <!--Usuario-->       
                 <div id="form-registro-usuario">
                     <label for="usuario">Usuario</label>
                     <input class="formulario" id="usuario" type="text"><br>
@@ -70,75 +70,74 @@
 
                     <label for="email">Email</label>
                     <input class="formulario" id="email" type="text"><br>
+                     <!----Boton registro-->
+                    <button id="btn-registro" class="hover">Registrarse</button>
                 </div>
             </div> 
 
-        <!--Boton registro-->
-        <button id="btn-registro">Registrarse</button>
+        
+        
 
         </form>
     </section>
 
 
-        <!-- Iniciar Sesion -->
+       <!-- Iniciar Sesion -->
 
         <section class="inicio ">
             <form id="inicio">
                 <div>
                     <label for="login-user">Usuario</label>
-                    <input class="formulario" id="login-user" type="text">
+                    <input class="formulario" id="login-user" type="text"><br>
 
                     <label for="login-password">Contraseña</label>
-                    <input class="formulario"  id="login-password" type="text" placeholder="debe contener al menos 8 caracteres, una mayúscula y un carácter especial">
+                    <input class="formulario"  id="login-password" type="text" placeholder="debe contener al menos 8 caracteres, una mayúscula y un carácter especial"><br>
 
-                    <button id="btn-login">Ingresar</button>
+                    <button id="btn-login" class="hover">Ingresar</button>
                 </div>
             </form>
         </section>
 
-        <!--Ya iniciado-->    
+       <!--Ya iniciado-->   
 
         <section class="r-s ocultar" >
             <section id="sect-home" class="ocultar">
-            <!-- CARD CONTAINER -->
-			<!-- USERS -->
+             <!---- CARD CONTAINER -->
+			 <!---- USERS -->
 
                 <section id="users" class="card-container">
-                    <!-- Card -->
+                     <!---- Card -->
                     <div class="card-client">
                         <div class="user-picture">
-
+                        </div>
+                    </div>
                 </section>            
             </section>
 
-        <!--Productos-->
+         <!----Productos-->
         <section id="products" class="card-container">
 
-            <!--card-->
+             <!----card-->
             <div class="card">
-                <div class="card">
                     <div class="card__content">
-                    </div>
-                </div>
-
-				<div class="card-img">
-                    <div class="img"></div>
-                </div>
-					<div class="card-title">Product title</div>
-					<div class="card-subtitle">Descripcion del producto</div>
-					<hr class="card-divider">
-					<div class="card-footer">
-						<div class="card-price"><span>$</span> 123.45</div>
-						<button class="card-btn" title="click">
-						  <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path><path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path><path d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path><path d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z"></path></svg>
-						</button>
-					</div>
-				<!-- ---- -->
+                        <div class="card-img"></div>
+                            <div class="img"></div>
+                        </div>
+                            <div class="card-title">Product title</div>
+                            <div class="card-subtitle">Descripcion del producto</div>
+                            <hr class="card-divider">
+                            <div class="card-footer">
+                                <div class="card-price"><span>$</span> 123.45</div>
+                                <button class="card-btn" title="click">
+                                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path><path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path><path d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path><path d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z"></path></svg>
+                                </button>
+                            </div>
+				 <!---- ---- -->
                 
-                <!--Post-->
+                 <!----Post-->
 
                 <section id="posts" class="card-container">
-                    <!-- Card -->
+                   <!-- Card -->
                     <div class="card">
        
                         <div class="body">
@@ -162,4 +161,4 @@
 
   
 </body>
-</html>
+</html> 

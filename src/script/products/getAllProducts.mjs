@@ -67,7 +67,7 @@ export const getAllProducts = async()=>{
           </div>
           
             `
-        });
+        })
 
         const buttons = document.querySelectorAll("#btn-product-id");
         

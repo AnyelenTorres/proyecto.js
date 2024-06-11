@@ -203,4 +203,4 @@ export const handleLogInState = (firstName = "", lastName = "", username = "", e
     logInState.user.email = email;
     logInState.user.image = image;
     localStorage.setItem('stateLogin', JSON.stringify(logInState));
-};
+}

@@ -23,6 +23,8 @@ body{
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 0.2rem;
+    margin:0.2rem;
 }
 #imagen-corazon{
     width: 50PX;
@@ -74,19 +76,34 @@ header nav ul{
     
 }
 
-.r-l {
+.r-l{
    display: flex;
    text-align: end;
    margin: 1rem;
    padding: 1rem;
    justify-content: space-around;
+   padding: 0.2rem;
+   
+}
+.inicio{
+    display: flex;
+   text-align: end;
+   margin: 1rem;
+   padding: 1rem;
+   padding: 0.2rem;
 }
 
 #btn-registro{
-  display: inline;
-  justify-content: center;
-  margin-top: 2rem;
+    padding: 0.3rem;
+    margin-top:0.3rem;
+   
+
 }  
+#btn-login{
+    padding: 0.3rem;
+    margin-top:0.3rem;
+}
+
 
 #posts{
     background:#909090;
@@ -94,5 +111,14 @@ header nav ul{
     height: 17rem;
     padding: 0.2rem;
     margin: 0.5rem;
+
+}
+.card{
+    margin: 2rem;
+}
+.hover:hover{
+    background-color: #dad5f5;
+    border-radius: 2px;
+    color: #0a0909;
 
 }
