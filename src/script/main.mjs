@@ -23,7 +23,7 @@ const $btnFormRegistro = $(".registro");
 const $Registrar = $("#btn-registro");
 const $btnFormInicio = $(".inicio");
 const $btnIniciar = $('#iniciar-sesion');
-const $home =$("r-s");
+const $home =$(".r-s");
 const $btnProducto = $("#show-products");
 const $btnUser = $("#show-users");
 const $btnCerrarSesion = $("#cerrar-sesion");
@@ -57,28 +57,28 @@ if(!localStorage.getItem('stateLogin')){
             }
     }))
 }else{
-    console.log("Ya está creado el stateLogin")
+    console.log("Ya está creado el stateLogin");
 };
 
 
-export let logInState = JSON.parse(localStorage.getItem('stateLogin'))
+export let logInState = JSON.parse(localStorage.getItem('stateLogin'));
 
 if(logInState.state){
-     $btnFormInicio.classList.add('ocultar')
-        $home.classList.remove('ocultar')
+     $btnFormInicio.classList.add('ocultar');
+        $home.classList.remove('ocultar');
        // $btnReceta.classList.remove('ocultar')
-        $btnProducto.classList.remove('ocultar')
-        $btnUser.classList.remove('ocultar')
-        $btnCerrarSesion.classList.remove('ocultar')
-        $btnRegistrarse.classList.add('ocultar')
-        $btnIniciar.classList.add('ocultar')
-        $sectionHome.classList.remove('ocultar')
+        $btnProducto.classList.remove('ocultar');
+        $btnUser.classList.remove('ocultar');
+        $btnCerrarSesion.classList.remove('ocultar');
+        $btnRegistrarse.classList.add('ocultar');
+        $btnIniciar.classList.add('ocultar');
+        $sectionHome.classList.remove('ocultar');
 
         $sectionHome.innerHTML = `
         <img src=${logInState.user.image} alt="">
 		<h1>Bienvenido <span id="home-name-user">${logInState.user.firstName}</span></h1>
-        `
-}
+        `;
+};
 
 //-----------EVENTOS--------------
 
@@ -124,7 +124,7 @@ $Registrar.addEventListener("submit", (e)=> {
             $password.value = ""
             $btnFormRegistro.classList.add('ocultar')
             $btnFormInicio.classList.remove('ocultar')
-        }})
+        }});
     
     
 

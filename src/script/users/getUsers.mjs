@@ -1,7 +1,7 @@
 export const getAllUsers =async () => {
     try{
         if(!localStorage.getItem('DBTT')){
-            const res = await fetch('https://dummyjson.com/users?limit=0')
+            const res = await fetch('https://dummyjson.com/users?limit=0');
             const data = await res.json()
             localStorage.setItem('DBTT', JSON.stringify(data.users))
         }else{
