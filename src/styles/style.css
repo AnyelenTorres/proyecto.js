@@ -95,11 +95,13 @@ header nav ul{
    
 }
 .inicio{
-    display: flex;
+   display: flex;
    text-align: end;
-   margin: 1rem;
-   padding: 1rem;
-   padding: 0.2rem;
+   justify-content: center;
+   margin: 2rem;
+   padding: 2rem;
+   
+  
 }
 
 #btn-registro{
@@ -121,4 +123,7 @@ header nav ul{
     color: #0a0909;
     
 
+}
+.ocultar{
+    display: none;
 }

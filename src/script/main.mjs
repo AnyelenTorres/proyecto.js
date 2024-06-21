@@ -105,31 +105,61 @@ $btnIniciar.addEventListener('click', () =>{
 
 
 //-----------REGISTRAMOS UN USUARIO----------
+// REGEX validacion
+const regex = {
+    nombre : /^[a-zA-ZÀ-ÿ\s]{4,20}$/,
+    apellido : /^[a-zA-ZÀ-ÿ\s]{4,20}$/,
+    edad : /^[0-9]{2}$/,
+    usuario: /^[a-zA-ZÀ-ÿ\s]{4,20}$/,
+    email : /^[a-zA-Z0-9\.\-_]+@[a-zA-Z]+\.(com|net|gov.ar)$/,
+    password : /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{8,24}$/
+}
 
+const valueRegex = {
+    nombre:false,
+    apellido: false,
+    edad: false,
+    usuario: false,
+    email:false,
+    password:false
+}
 
-$Registrar.addEventListener("submit", (e)=> {
-    e.preventDefault();
-    if($nombre.value !== ""  && ///^[a-zA-ZÀ-ÿ\s]{4,20}$/.test($nombre.value) && 
-        $apellido.value !== "" &&// /^[a-zA-ZÀ-ÿ\s]{4,20}$/.test($apellido.value) &&
-        $email.value !== "" &&// /^[a-zA-Z0-9\.\-_]+@[a-zA-Z]+\.(com|net|gov.ar)$/.test($email.value) && 
-        $usuario.value !== "" &&// /^[a-zA-ZÀ-ÿ\s]{4,20}$/.test($usuario.value) && 
-        $edad.value !== "" &&// /^[0-9]{2}$/.test($edad.value) &&  
-        $password.value !== ""){ //&& /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{8,24}$/.test($password.value) ){
-           
-            addUser($nombre.value, $apellido.value,$usuario.value,$email.value,$edad.value,  $password.value);
-            alert('El registro fue exitoso');
-            $nombre.value = ""
-            $apellido.value = ""
-            $usuario.value = ""
-            $password.value = ""
-            $btnFormRegistro.classList.add('ocultar')
-            $btnFormInicio.classList.remove('ocultar')
-        }});
+const forRegistro = document.querySelectorAll('#registro input')
+//const btnRegistro = document.querySelector('#btn-registro')
+
+forRegistro.forEach(element => {
+    element.addEventListener('change', () => validation(element.name, element.value))
+    element.addEventListener('blur', () => validation(element.name, element.value))
+});
+
+function validation(name, value){
+   regex[name].test(value) ? valueRegex[name] = true : false;
+}
+
+$Registrar.addEventListener("click",(e)=> {
+    e.preventDefault()
+    if(valueRegex.nombre && valueRegex.apellido && valueRegex.edad && valueRegex.email && valueRegex.password && valueRegex.usuario ){
     
-    
-
-
-
+        const dbUsers = JSON.parse(localStorage.getItem('BDTT'))
+        const user = {
+            nombre : $('#nombre').value,
+            apellido: $('#apellido').value,
+            email:$('#email').value,
+            edad: $('#edad').value,
+            password: $('#password').value,
+            usuario: $('#usuario').value
+        }
+        dbUsers.push(user)
+        localStorage.setItem('BDTT', JSON.stringify(dbUsers))
+        alert('El registro fue exitoso');
+        $nombre.value = "";
+        $apellido.value = "";           
+        $usuario.value = "";
+        $password.value = "";
+        $btnFormRegistro.classList.add('ocultar');
+        $btnFormInicio.classList.remove('ocultar');
+    }
+})
 
 //----------- MOSTRAR TODOS LOS POST del dummyjson-------------------------
 
@@ -141,7 +171,7 @@ $btnPost.addEventListener('click', () => {
 //-----------------FORM LOGIN-----------------------------------------------
 $btnLogIn.addEventListener('click', (e) => {
     e.preventDefault();
-    let resLogIn = logInUser($logInUser.value, $logInPassword.value)
+    let resLogIn = logInUser($logInUser.value, $logInPassword.value);
     if(resLogIn){
         $btnFormInicio.classList.add('ocultar');
         $home.classList.remove('ocultar');
@@ -203,4 +233,4 @@ export const handleLogInState = (firstName = "", lastName = "", username = "", e
     logInState.user.email = email;
     logInState.user.image = image;
     localStorage.setItem('stateLogin', JSON.stringify(logInState));
-}
+};

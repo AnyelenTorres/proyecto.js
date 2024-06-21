@@ -73,13 +73,13 @@ export const getAllProducts = async()=>{
         
         buttons.forEach( btn => {
             btn.addEventListener('click', () => {
-                addToCart(btn.dataset.id)
+                addToCart(btn.dataset.id);
             })
         })
 
     }catch(e){
-
-    }
+              console.log("error");
+    };
 
 }
 
