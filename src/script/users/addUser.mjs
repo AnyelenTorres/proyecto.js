@@ -1,4 +1,4 @@
-const addUser = async (firstName, lastName, username, password, image = "https://cdn-icons-png.freepik.com/256/149/149071.png?semt=ais_hybrid") => {
+const addUser = async (firstName, lastName, username, password,email, image = "https://cdn-icons-png.freepik.com/256/149/149071.png?semt=ais_hybrid") => {
   const postUser = await fetch('https://dummyjson.com/user/add', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

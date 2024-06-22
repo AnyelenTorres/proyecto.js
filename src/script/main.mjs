@@ -171,11 +171,11 @@ $Registrar.addEventListener('click', (e) => {
         addUser($nombre.value, $apellido.value, $usuario.value, $password.value,$email.value)
         alert('El registro fue exitoso')
 
-        $nombre.value = "";
-        $apellido.value = "";           
-        $usuario.value = "";
-        $password.value = "";
-        $email.value= "";
+       // $nombre.value = "";
+        //$apellido.value = "";           
+        //$usuario.value = "";
+        //$password.value = "";
+        //$email.value= "";
        
         $btnFormRegistro.classList.add('ocultar')
         $btnFormInicio.classList.remove('ocultar')
