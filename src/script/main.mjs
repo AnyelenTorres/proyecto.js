@@ -105,7 +105,7 @@ $btnIniciar.addEventListener('click', () =>{
 
 
 //-----------REGISTRAMOS UN USUARIO----------
-// REGEX validacion
+/* REGEX validacion
 const regex = {
     nombre : /^[a-zA-ZÀ-ÿ\s]{4,20}$/,
     apellido : /^[a-zA-ZÀ-ÿ\s]{4,20}$/,
@@ -139,7 +139,7 @@ function validation(name, value){
 $Registrar.addEventListener("click",(e)=> {
     e.preventDefault()
     if(valueRegex.nombre && valueRegex.apellido && valueRegex.edad && valueRegex.email && valueRegex.password && valueRegex.usuario ){
-    
+        addUser($nombre.value, $apellido.value, $apellido.value,$usuario.value, $password.value,$email.value,)
         const dbUsers = JSON.parse(localStorage.getItem('BDTT'))
         const user = {
             nombre : $('#nombre').value,
@@ -151,13 +151,34 @@ $Registrar.addEventListener("click",(e)=> {
         }
         dbUsers.push(user)
         localStorage.setItem('BDTT', JSON.stringify(dbUsers))
+       
         alert('El registro fue exitoso');
+
+
+      // $nombre.value = "";
+        //$apellido.value = "";           
+        //$usuario.value = "";
+        //$password.value = "";
+        
+        $btnFormRegistro.classList.add('ocultar');
+        $btnFormInicio.classList.remove('ocultar');
+    }
+})
+*/
+
+$Registrar.addEventListener('click', (e) => {
+    if($nombre.value !== "" && $apellido.value !== "" && $usuario.value !== "" && $password.value !== ""){
+        addUser($nombre.value, $apellido.value, $usuario.value, $password.value,$email.value)
+        alert('El registro fue exitoso')
+
         $nombre.value = "";
         $apellido.value = "";           
         $usuario.value = "";
         $password.value = "";
-        $btnFormRegistro.classList.add('ocultar');
-        $btnFormInicio.classList.remove('ocultar');
+        $email.value= "";
+       
+        $btnFormRegistro.classList.add('ocultar')
+        $btnFormInicio.classList.remove('ocultar')
     }
 })
 
@@ -171,33 +192,33 @@ $btnPost.addEventListener('click', () => {
 //-----------------FORM LOGIN-----------------------------------------------
 $btnLogIn.addEventListener('click', (e) => {
     e.preventDefault();
-    let resLogIn = logInUser($logInUser.value, $logInPassword.value);
+    let resLogIn = logInUser($logInUser.value, $logInPassword.value)
     if(resLogIn){
-        $btnFormInicio.classList.add('ocultar');
-        $home.classList.remove('ocultar');
-       // $btnReceta.classList.remove('ocultar');
-        $btnProducto.classList.remove('ocultar');
-        $btnUser.classList.remove('ocultar');
-        $btnCerrarSesion.classList.remove('ocultar');
-        $btnRegistrarse.classList.add('ocultar');
-        $btnIniciar.classList.add('ocultar');
-        $sectionHome.classList.remove('ocultar');
+        $btnFormInicio.classList.add('ocultar')
+        $home.classList.remove('ocultar')
+        //$btnReceta.classList.remove('ocultar')
+        $btnProducto.classList.remove('ocultar')
+        $btnUser.classList.remove('ocultar')
+        $btnCerrarSesion.classList.remove('ocultar')
+        $btnRegistrarse.classList.add('ocultar')
+        $btnIniciar.classList.add('ocultar')
+        $sectionHome.classList.remove('ocultar')
 
         $sectionHome.innerHTML = `
         <img src=${logInState.user.image} alt="">
 		<h1>Bienvenido <span id="home-name-user">${logInState.user.firstName}</span></h1>
         `
 
-        $logInPassword.value = "";
-        $logInUser.value = "";
-
-    
+        $logInPassword.value = ""
+        $logInUser.value = ""
     }else{
-        alert("la contraseña o usuario es incorrecto/a.");
+        alert('Contraseña/Usuario incorrecta')
     }
+    
+})
 
 
-});
+
 
 //-----------CERRAR SESION----------------
 

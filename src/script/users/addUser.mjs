@@ -7,6 +7,7 @@ const addUser = async (firstName, lastName, username, password, image = "https:/
         lastName,
         username,
         password,
+        email,
         image
       })
     })
